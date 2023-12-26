@@ -1,0 +1,69 @@
+.boxMainForm{
+    background-color: red;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 99999;
+    color: white;
+    background-color: var(--color1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: .5em;
+}
+
+.boxMainForm > h1{
+    margin-bottom: 30px;
+    font-size: 3em;
+    padding: .2em 1em;
+    color: var(--color5);
+    text-align: center;
+}
+
+.boxForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color2);
+    width: 100%;
+    max-width: 500px;
+    padding: 0.3em;
+    border-radius: 10px;
+}
+
+
+.boxForm h1{
+    width: 200px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.boxForm form{
+    height: 80%;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+
+.boxForm form p{
+    color: red;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.link{
+    margin-block: 15px;
+    border-top: 1px solid white;
+    width: 80%;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.boxForm a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+}

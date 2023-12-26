@@ -1,0 +1,20 @@
+.boxInput{
+    display: flex;
+    flex-direction: column;
+    width: inherit;
+}
+
+.boxInput label{
+    margin-bottom: 8px;
+    font-size: 1.2em;
+}
+
+.boxInput input{
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    padding: .2em 0px .2em .2em;
+    border-radius: 5px;
+}
+.boxInput.error input{
+    border: 2px solid red;
+}

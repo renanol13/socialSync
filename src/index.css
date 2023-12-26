@@ -1,0 +1,26 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:  'Dosis', sans-serif;
+  /* font-family:'Roboto', sans-serif; */
+}
+
+:root{
+  --color1: #0e1c26;
+  --color2: #1a2c36;
+  --color3: #2a454b;
+  --color4: #0000002c;
+  --color5: goldenrod;
+  
+}
+
+body,html, #root{
+  width: 100%;
+  height: 100%;
+  background-color: var(--color1);
+}
+
+li{
+  list-style: none;
+}

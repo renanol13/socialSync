@@ -1,0 +1,22 @@
+.msgPopUp{
+    position: absolute;
+    z-index: 99999;
+    top: 40px;
+    border-radius: 20px;
+    font-size: 1.2em;
+    padding: .8em 2em;
+    background-color: var(--color2);
+    color: white;
+    animation: message 0.3s ;
+}
+
+
+@keyframes message {
+    0% {
+        top: -100px
+    }
+    100%{
+        top: 40px
+    }
+}
+

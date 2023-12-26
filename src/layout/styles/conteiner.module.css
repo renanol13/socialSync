@@ -1,0 +1,6 @@
+.boxConteiner{
+    max-width: 800px;
+    min-height: calc(100vh - 50px);
+    padding: 0px .3em;
+    margin: 0 auto;
+}

@@ -9,6 +9,7 @@ import Navbar from "../layout/Navbar";
 import Profile from "../pages/Profile";
 import Search from "../pages/Search";
 import Friends from "../pages/Friends";
+import PostPage from "../pages/PostPage";
 
 export default function PublicRouter() {
   return (
@@ -20,6 +21,7 @@ export default function PublicRouter() {
             <Route path="/profile" element={<Conteiner><Profile/></Conteiner>} />
             <Route path="/search" element={<Conteiner><Search/></Conteiner>} />
             <Route path="/friends" element={<Conteiner><Friends/></Conteiner>} />
+            <Route path="/postPage/:id" element={<Conteiner><PostPage/></Conteiner>} />
           </Route>
         <Route path="/register" element={<Register />} />
         <Route path="/signin" element={<Signin />} />

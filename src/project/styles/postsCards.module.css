@@ -1,0 +1,102 @@
+.boxPostCard{
+    width: 90%;
+    background-color: var(--color4);
+    margin-block: 20px;
+    border-radius: 10px;
+    padding: .5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.703);
+    cursor: pointer;
+    color: white;
+}
+
+.boxInfoUser{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.boxInfoUser #date{
+    font-size: .8em;
+}
+
+#linkUser{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-self: flex-start;
+    gap: 10px;
+}
+
+#linkUser a{
+    text-decoration: none;
+    color: white;
+}
+
+.boxInfoUser svg{
+    height: 40px;
+    width: 40px;
+}
+
+#name{
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+#date{
+    color: var(--color3);
+    font-weight: 700;
+}
+
+
+.boxContent{
+    margin-block: 30px;
+    font-size: 1.3em;
+    font-weight:200 ;
+    width: 80%;
+}
+
+.boxControllers{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.boxControllers button{
+    padding: .2em 2em;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    color: var(--color6);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+.boxControllers .likeChecked{
+    color: red;
+}
+
+.boxControllers #comment, .boxControllers #like{
+    cursor: pointer;
+}
+
+.boxControllers #comment:active{
+    color: rgb(68, 68, 237);
+}
+
+.boxControllers .like:not(.likeChecked):active svg{
+    transform: rotate(-20deg);
+}
+
+.boxControllers button svg{
+    width: 20px;
+    height: 20px;
+}
+

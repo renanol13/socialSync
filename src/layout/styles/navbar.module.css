@@ -7,7 +7,6 @@
     width: 100%;
     height: 50px;
     background-color: rgba(0, 0, 0, 0.352);
-    /* background-image: linear-gradient(to top, var(--color1) , var(--color2)); */
 }
 
 .boxNavBar ul{
@@ -42,3 +41,9 @@
 /* .boxNavBar svg:active{
     color: blue;
 } */
+
+@media (min-width:1000px){
+    .boxNavBar{
+        bottom: initial;
+    }
+}

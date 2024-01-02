@@ -1,0 +1,64 @@
+.boxBackground {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #0e1c26b0;
+  color: white;
+}
+
+.boxCommentsPage {
+    width: 85%;
+    background-color: var(--color2);
+    border-radius: 20px;
+    padding: .8em;
+}
+
+#linkUser {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+#linkUser a{
+    text-decoration: none;
+    margin-left: 5px;
+    color: white;
+}
+
+#linkUser svg{
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+#boxInfoUser{
+    display: flex;
+    align-items: center;
+}
+
+#boxInfoUser > svg{
+    padding: .2em;
+    cursor: pointer;
+}
+
+#content{
+    margin-top: 20px;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+#boxTextArea {
+    border-left: 3px solid var(--color3);
+  display: flex;
+  justify-content: center;
+  padding:2.5em 0 0.5em 0 ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

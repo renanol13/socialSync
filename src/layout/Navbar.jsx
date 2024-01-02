@@ -7,8 +7,9 @@ import { FaUserFriends } from "react-icons/fa"
 import styles from './styles/navbar.module.css'
 
 function Navbar() {
+
   return (
-      <nav className={styles.boxNavBar}>
+    <nav className={styles.boxNavBar}>
           <ul>
               <li><Link to='/'><GoHome/></Link> </li>
               <li><Link to='/search'><IoSearchSharp/></Link></li>

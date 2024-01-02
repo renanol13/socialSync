@@ -1,0 +1,39 @@
+.boxControllers{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.boxControllers button{
+    padding: .2em 2em;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    color: var(--color6);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+.boxControllers .likeChecked{
+    color: red;
+}
+
+.boxControllers #comment, .boxControllers #like{
+    cursor: pointer;
+}
+
+.boxControllers #comment:active{
+    color: rgb(68, 68, 237);
+}
+
+.boxControllers .like:not(.likeChecked):active svg{
+    transform: rotate(-20deg);
+}
+
+.boxControllers button svg{
+    width: 20px;
+    height: 20px;
+}

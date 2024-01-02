@@ -1,0 +1,13 @@
+.boxHomePage{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.boxPosts{
+   width: 100%;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+}

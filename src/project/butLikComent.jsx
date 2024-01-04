@@ -1,48 +1,39 @@
-import TextArea from "../components/textArea";
 import { FaRegComment } from "react-icons/fa";
 import { BiLike } from "react-icons/bi";
 
-import styles from "./styles/butLikComent.module.css";
 import { useContext, useEffect, useState } from "react";
 import instanceApi from "../api/instancePrivate";
 import { AuthContext } from "../context/AuthContext";
 
-function ButLikComent({ setSendComment, data, setBut }) {
-    const [isLike, setIsLike] = useState(false);
-    const [numberLikes, setNumberLikes] = useState(0)
-    const [numberComments, setNumberComments] = useState(0)
+import styles from "./styles/butLikComent.module.css";
+
+function ButLikComent({ setSendComment, data, setShowPageComments}) {
+  const [isLike, setIsLike] = useState(false);
   const { user } = useContext(AuthContext);
 
   const { instancePriv } = instanceApi();
 
   useEffect(() => {
     const checkLike = data.likes.some((elm) => elm.author == user.id);
-      checkLike ? setIsLike(true) : setIsLike(false);
-      setNumberLikes(data.likes.length)
-
-      const fetchComments = async () => {
-          const response = await instancePriv.get(`/comments/${data._id}`);
-          setNumberComments(response.data.length)
-      }
-      fetchComments()
+    checkLike ? setIsLike(true) : setIsLike(false);
   }, []);
 
   const handleComments = () => {
-    setBut(true);
+    setShowPageComments(true)
     setSendComment([
       {
         id: data._id,
         author: data.author,
         nameAuthor: data.nameAuthor,
+        userNameAuthor: data.userNameAuthor,
         content: data.content,
       },
     ]);
   };
-  
-  const fetchLike = async() => {
-      await instancePriv.post(`posts/like/${data._id}`);
-      setIsLike(!isLike);
-      isLike ? setNumberLikes(numberLikes-1) : setNumberLikes(numberLikes+1)
+
+  const fetchLike = async () => {
+    await instancePriv.post(`posts/like/${data._id}`);
+    setIsLike(!isLike);
   };
 
   const handleClickPage = (evt) => {
@@ -50,24 +41,28 @@ function ButLikComent({ setSendComment, data, setBut }) {
   };
 
   return (
+    
     <div
       className={styles.boxControllers}
-      onClick={(evt) => handleClickPage(evt)}>
+      onClick={(evt) => handleClickPage(evt)}
+    >
       <button
         id={styles.comment}
-        onClick={(evt) => {
-        handleComments(evt);
-        }}>
+          onClick={(evt) => {
+          handleComments(evt);
+        }}
+      >
         <FaRegComment />
-        Comentar{numberComments}
+        Comentar
       </button>
       <button
-        onClick={(evt) => fetchLike(data.likes)}
-        className={`${styles.like} ${isLike ? styles.likeChecked : ""}`}>
+        onClick={() => fetchLike(data.likes)}
+        className={`${styles.like} ${isLike ? styles.likeChecked : ""}`}
+      >
         <BiLike />
-        {numberLikes}
+        Curtir
       </button>
-    </div>
+      </div>
   );
 }
 

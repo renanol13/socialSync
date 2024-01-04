@@ -2,11 +2,13 @@
     width: 100%;
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid var(--color3);
 }
 
 
 .boxControllers button{
-    padding: .2em 2em;
+    padding: .5em 2em .1em 2em;
     font-weight: bold;
     background-color: transparent;
     border: none;

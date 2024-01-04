@@ -12,7 +12,7 @@ function HomePage() {
   const [msgPost, setMsgPost] = useState("");
   const [fetchPost, setFetchPost] = useState(false);
   const [sendComment, setSendComment] = useState([]);
-  const [but, setBut] = useState(false);
+  const [showPageComments, setShowPageComments] = useState(false);
 
   const { instancePriv } = instanceApi();
 
@@ -25,7 +25,7 @@ function HomePage() {
     });
   }, [fetchPost]);
 
-  const sendPosts = async (evt) => {
+  const sendPosts = async () => {
     if (msgPost) {
       await instancePriv.post("/posts", { content: msgPost });
       setMsgPost("");
@@ -36,7 +36,12 @@ function HomePage() {
 
   return (
     <div className={styles.boxHomePage}>
-      {but && <CommentsPage setbut={setBut} dataComment={sendComment} />}
+      {showPageComments && (
+        <CommentsPage
+          setShowPageComments={setShowPageComments}
+          dataComment={sendComment}
+        />
+      )}
       <TextArea
         text="O que você está pensando?"
         labelBtn="Publicar"
@@ -47,24 +52,15 @@ function HomePage() {
       <h2>Postagens</h2>
       <div className={styles.boxPosts}>
         {loading ? (
-          <Loading/>
+          <Loading />
         ) : (
-            data &&
-            <PostsCard data={data} setBut={setBut} setSendComment={setSendComment}/>
-          // data.map((elm) => (
-          //   <PostsCard
-          //     key={elm._id}
-
-          //     setDataComments={setDataComment}
-          //     setBut={setBut}
-          //     id={elm._id}
-          //     author={elm.author}
-          //     nameAuthor={elm.nameAuthor}
-          //     createdAt={elm.createdAt}
-          //     likes={elm.likes}
-          //     content={elm.content}
-          //   />
-          // ))
+          data && (
+            <PostsCard
+              data={data}
+              setSendComment={setSendComment}
+              setShowPageComments={setShowPageComments}
+            />
+          )
         )}
       </div>
     </div>

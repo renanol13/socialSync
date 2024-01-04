@@ -9,7 +9,7 @@ function Register() {
   const navigate = useNavigate();
 
   const submitRegister = async (dataForm) => {
-    const { isLogged, msg } = await setStorageData(dataForm, "auth/register");
+    const { isLogged, msg } = await setStorageData(dataForm, "register/");
     if (isLogged) navigate("/");
     return msg;
   };

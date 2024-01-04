@@ -15,7 +15,6 @@ function UseFetch() {
         ...configs,
       });
       setData(response.data);
-
     } catch (error) {
       setError(error.response.data.msg);
     } finally {

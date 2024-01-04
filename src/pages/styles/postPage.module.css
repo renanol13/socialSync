@@ -9,36 +9,49 @@
     font-weight: 600;
     letter-spacing: 2px;
     margin-bottom: 10px;
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.297);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.166);
 }
 
 #header svg{
     cursor: pointer;
 }
 
+.boxPostPage{
+    padding: 0px .3em;
+}
+
 .infoUser{
     text-decoration: none;
     color: white;
     margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
 
 .infoUser svg{
-    height: 70px;
-    width: 70px;
+    height: 65px;
+    width: 65px;
 }
 
 .infoUser h2{
-    text-transform: capitalize;
     font-size: 2em;
+    text-transform: capitalize;
+}
+
+.infoUser p{
+    font-size: 1.2em;
+    font-weight: 500;
+    color: var(--color4);
 }
 
 #content{
-    border-top: 2px solid var(--color3);
-    border-bottom: 2px solid var(--color3);
     padding-block: 50px;
     color: white;
-    font-size: 2em;
+    font-size: 1.8em;
     margin-top: 10px;
+    word-wrap: break-word;
+    white-space: pre-line;
 }
 
 .boxInfoNumbers{
@@ -48,7 +61,6 @@
 }
 
 .boxButLikComent{
-    border-top: 1px solid var(--color3);
     border-bottom: 1px solid var(--color3);
     padding-block: 5px;
 }
@@ -74,8 +86,14 @@
 }
 
 .boxUserComment p{
-    font-weight: 600;
-    
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.boxUserComment #userName{
+    color: var(--color4);
+    font-size: 1.2em;
 }
 
 .boxUserComment a{
@@ -84,6 +102,11 @@
     text-decoration: none;
     color: white;
     font-size: 1.1em;
+    gap: 5px;
+}
+
+.boxUserComment .time{
+    font-size: 0.8em;
 }
 
 .boxUserComment a svg{

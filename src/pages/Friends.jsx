@@ -1,8 +1,14 @@
-import React from 'react'
+import { useContext } from 'react'
+import { AuthContext } from '../context/AuthContext'
+
 
 function Friends() {
+  const {Logout} = useContext(AuthContext)
+
   return (
-    <div>Friends</div>
+    <div>
+       <button onClick={()=>Logout()}>Deslogar</button>
+    </div>
   )
 }
 

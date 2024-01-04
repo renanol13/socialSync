@@ -1,0 +1,67 @@
+.boxProfile{
+    color: white;
+    width: 100%;
+    position: relative;
+}
+
+.infoUser{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.infoUser svg{
+    width: 110px;
+    height: 110px;
+}
+
+.infoUser p{
+    font-weight: 800;
+    font-size: 2em;
+}
+
+.infoUser #userName{
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: var(--color4);
+}
+
+.moreInfo{
+    color: var(--color4);
+    font-weight: 600;
+    padding-left: 10px;
+
+}
+
+.moreInfo #description{
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.moreInfo p{
+    margin-block: 5px;
+    font-size: 1em;
+    white-space: pre-line;
+}
+
+.moreInfo a{
+    text-decoration: none;
+    color: rgb(67, 67, 246);
+}
+
+.moreInfo svg{
+    margin-right: 4px;
+}
+
+/* .moreInfo #numberPosts{
+    font-size: .8em;
+} */
+
+.boxPosts{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

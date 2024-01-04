@@ -21,7 +21,7 @@ function Signin() {
   const checkForm = async () => {
     const { boolerForm, msgForm } = VerifyForm(data);
     if (boolerForm) {
-      const { isLogged, msg } = await setStorageData(data,"auth/login");
+      const { isLogged, msg } = await setStorageData(data,"login/");
       if (isLogged) navigate('/', {state:{msg: msg}})
       setMessage(msg);
     } else {

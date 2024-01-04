@@ -18,7 +18,7 @@ export default function PublicRouter() {
         <Routes>
           <Route exact path="/" element={<AuthRouter />}>
             <Route index element={<Conteiner> <Home /> </Conteiner>}/>
-            <Route path="/profile" element={<Conteiner><Profile/></Conteiner>} />
+            <Route path="/profile/:name?" element={<Conteiner><Profile/></Conteiner>} />
             <Route path="/search" element={<Conteiner><Search/></Conteiner>} />
             <Route path="/friends" element={<Conteiner><Friends/></Conteiner>} />
             <Route path="/postPage/:id" element={<Conteiner><PostPage/></Conteiner>} />

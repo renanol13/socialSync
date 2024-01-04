@@ -40,6 +40,14 @@ function Register({funcSubmit}) {
         <form onSubmit={handleSubmit}>
         <Input
             type="text"
+            name="userName"
+            text="Nome de usuário"
+            stylesCheck= {!!message}
+            value={data.userName ? data.userName : ""}
+            handleChange={handleChange}
+          />
+        <Input
+            type="text"
             name="name"
             text="Nome"
             stylesCheck= {!!message}

@@ -1,0 +1,44 @@
+.boxNavFloat{
+    right: 20px;
+    position: relative;
+}
+
+.boxNavFloat > svg{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.boxNavFloat ul{
+    position: absolute;
+    z-index: 0;
+    padding: .2em;
+    top: -10px;
+    right: 40px;
+    font-weight: bold;
+}
+
+
+.stylesCustom{
+    color: var(--color4);
+}
+
+.boxNavFloat li{  
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.boxNavFloat li:nth-child(1){
+    color: red;
+}
+
+.boxNavFloat li svg{
+    width: 20px;
+    height: 20px;
+    margin-left: 2px;
+}
+
+

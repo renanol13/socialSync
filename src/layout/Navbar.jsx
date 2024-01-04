@@ -8,6 +8,7 @@ import styles from './styles/navbar.module.css'
 
 function Navbar() {
 
+
   return (
     <nav className={styles.boxNavBar}>
           <ul>

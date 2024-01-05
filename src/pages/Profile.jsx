@@ -34,18 +34,26 @@ function Profile() {
   const { instancePriv } = instanceApi();
   const { loading, data, axiosFetch } = UseFetch();
 
-  useEffect(() => {
+  const getPosts = () => {
     axiosFetch({
       method: "POST",
       url: "posts/user",
       configs: { userName: name || user.userName },
     });
-
-    const getUser = async () => {
+  };
+  
+  const getUser = async () => {
+    try {
       const response = await instancePriv.get(`/${name || user.userName}`);
       setDataUser(response.data);
-    };
+    } catch (error) {
+      console.log("Deu erro " + error);
+    }
+  };
+
+  useEffect(() => {
     getUser();
+    getPosts();
   }, [name, butFetch]);
 
   const handleFetch = () => {

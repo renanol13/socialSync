@@ -18,10 +18,14 @@ function EditInfoUser({ name, description, links, address, setEditBut,handleFetc
       setData({ ...data, [e.target.name]: e.target.value });
   };
    
-    const handleSubmit = async () => {
+  const handleSubmit = async () => {
+    try {
       await instancePriv.patch('/edit/user',  data )
       setEditBut(false)
-      handleFetch()
+      handleFetch() 
+    } catch (error) {
+      console.log('Deu error'+error);
+      }
   }
 
   

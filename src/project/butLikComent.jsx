@@ -7,8 +7,9 @@ import { AuthContext } from "../context/AuthContext";
 
 import styles from "./styles/butLikComent.module.css";
 
-function ButLikComent({ setSendComment, data, setShowPageComments}) {
+function ButLikComent({ setSendComment, data, setShowPageComments }) {
   const [isLike, setIsLike] = useState(false);
+  const [isFetching, setIsFetching] = useState(false);
   const { user } = useContext(AuthContext);
 
   const { instancePriv } = instanceApi();
@@ -19,7 +20,7 @@ function ButLikComent({ setSendComment, data, setShowPageComments}) {
   }, []);
 
   const handleComments = () => {
-    setShowPageComments(true)
+    setShowPageComments(true);
     setSendComment([
       {
         id: data._id,
@@ -32,8 +33,23 @@ function ButLikComent({ setSendComment, data, setShowPageComments}) {
   };
 
   const fetchLike = async () => {
-    await instancePriv.post(`posts/like/${data._id}`);
-    setIsLike(!isLike);
+    if (!isFetching) {
+      try {
+        //Impede que faça outra requisiçao antes concluir a atua
+        setIsFetching(true)
+        await instancePriv.post(`posts/like/${data._id}`);
+
+        setIsLike(!isLike);
+        
+        setTimeout(() => {
+          setIsFetching(false);
+        }, 300);
+
+      } catch (error) {
+        console.log("Deu erro" + error);
+        setIsFetching(false)
+      }
+    }
   };
 
   const handleClickPage = (evt) => {
@@ -41,14 +57,13 @@ function ButLikComent({ setSendComment, data, setShowPageComments}) {
   };
 
   return (
-    
     <div
       className={styles.boxControllers}
       onClick={(evt) => handleClickPage(evt)}
     >
       <button
         id={styles.comment}
-          onClick={(evt) => {
+        onClick={(evt) => {
           handleComments(evt);
         }}
       >
@@ -62,7 +77,7 @@ function ButLikComent({ setSendComment, data, setShowPageComments}) {
         <BiLike />
         Curtir
       </button>
-      </div>
+    </div>
   );
 }
 

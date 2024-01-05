@@ -17,33 +17,43 @@ function PostPage() {
   const [sendComment, setSendComment] = useState();
   const { instancePriv } = instanceApi();
   const [showPageComments, setShowPageComments] = useState(false);
-  const [butFetch, setButFetch] = useState(null)
+  const [butFetch, setButFetch] = useState(null);
 
-  useEffect(() => {
+  const getPost = () => {
     axiosFetch({
       method: "GET",
       url: `/posts/${id}`,
     });
+  };
 
-    const getComments = async () => {
+  const getComments = async () => {
+    try {
       const response = await instancePriv.get(`/comments/${id}`);
       setDataComments(response.data);
-    };
+    } catch (error) {
+      console.log("Deu erro " + error);
+    }
+  };
+  
+  useEffect(() => {
+    getPost();
     getComments();
   }, [butFetch]);
-  
+
   const handleFetch = () => {
-    setButFetch(!butFetch)
-  }
+    setButFetch(!butFetch);
+  };
 
   return (
     <>
-      {showPageComments && <CommentsPage
-        setShowPageComments={setShowPageComments}
-        handleFetch={handleFetch}
-        dataComment={sendComment}
-      />}
-      <HeaderNavigate text='Post'/>
+      {showPageComments && (
+        <CommentsPage
+          setShowPageComments={setShowPageComments}
+          handleFetch={handleFetch}
+          dataComment={sendComment}
+        />
+      )}
+      <HeaderNavigate text="Post" />
       {loading ? (
         <Loading />
       ) : (
@@ -51,7 +61,10 @@ function PostPage() {
         dataComments &&
         data.map((elm) => (
           <div key={elm._id} className={styles.boxPostPage}>
-            <Link to={`/profile/${elm.userNameAuthor}`} className={styles.infoUser}>
+            <Link
+              to={`/profile/${elm.userNameAuthor}`}
+              className={styles.infoUser}
+            >
               <RxAvatar />
               <div>
                 <h2>{elm.nameAuthor}</h2>

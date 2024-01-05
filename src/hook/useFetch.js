@@ -8,6 +8,8 @@ function UseFetch() {
   const {instancePriv} = instanceApi()
 
   const axiosFetch = async (configsrequest) => {
+    setData([])
+    setError(null)
     const { method, url, configs = {} } = configsrequest;
     setLoading(true);
     try {
@@ -17,6 +19,7 @@ function UseFetch() {
       setData(response.data);
     } catch (error) {
       setError(error.response.data.msg);
+      console.log(error.response.data.msg);
     } finally {
       setLoading(false);
     }

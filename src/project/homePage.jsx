@@ -27,9 +27,13 @@ function HomePage() {
 
   const sendPosts = async () => {
     if (msgPost) {
-      await instancePriv.post("/posts", { content: msgPost });
-      setMsgPost("");
-      setFetchPost(!fetchPost);
+      try {
+        await instancePriv.post("/posts", { content: msgPost });
+        setMsgPost("");
+        setFetchPost(!fetchPost);
+      } catch (error) {
+        console.log('Deu erro'+ error);
+      }
     }
     setMsgPost("");
   };

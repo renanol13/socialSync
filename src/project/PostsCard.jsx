@@ -15,7 +15,6 @@ function PostsCard({ setSendComment, butDelEdit, data, setShowPageComments,handl
     e.stopPropagation();
     navigate(`/profile/${userName}`);
   };
-  
   return (
     <>
       {data.map((elm) => (

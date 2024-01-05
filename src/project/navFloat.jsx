@@ -13,13 +13,17 @@ function NavFloat({ data, handleFetch }) {
     e.stopPropagation();
     setMenu(!menu);
   };
-  
+
   const fetchDelete = async (e) => {
     e.stopPropagation();
-    await instancePriv.delete(`/posts/${data._id}`);
-    await instancePriv.delete(`/comments/${data._id}`);
-    setMenu(false);
-    handleFetch();
+    try {
+      await instancePriv.delete(`/posts/${data._id}`);
+      await instancePriv.delete(`/comments/${data._id}`);
+      setMenu(false);
+      handleFetch();
+    } catch (error) {
+      console.log("Deu error" + error);
+    }
   };
 
   return (

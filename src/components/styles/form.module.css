@@ -13,13 +13,10 @@
     padding: .5em;
 }
 
-.boxMainForm > h1{
-    margin-bottom: 30px;
-    font-size: 3em;
-    padding: .2em 1em;
-    color: var(--color5);
-    text-align: center;
+.boxMainForm h1{
+    display: none;
 }
+
 
 .boxForm{
     display: flex;
@@ -39,6 +36,7 @@
     text-align: center;
     margin-bottom: 20px;
 }
+
 .boxForm form{
     height: 80%;
     width: 85%;
@@ -66,4 +64,16 @@
     text-decoration: none;
     color: white;
     font-size: 1.2em;
+}
+
+
+@media (min-height:600px){
+    .boxMainForm > h1{
+        display: block;
+        margin-bottom: 30px;
+        font-size: 3em;
+        padding: .2em 1em;
+        color: var(--color5);
+        text-align: center;
+    }
 }

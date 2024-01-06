@@ -24,7 +24,7 @@ function EditInfoUser({ name, description, links, address, setEditBut,handleFetc
       setEditBut(false)
       handleFetch() 
     } catch (error) {
-      console.log('Deu error'+error);
+      console.log('Deu error '+error);
       }
   }
 

@@ -61,11 +61,11 @@ function Profile() {
   };
 
   return (
-    <>
+    <div className={styles.boxProfile}>
       {loading && !dataUser ? (
         <Loading />
-      ) : (
-        <div className={styles.boxProfile}>
+      ) : (  
+        <div>
           {butEdit && (
             <EditInfoUser
               name={dataUser.name}
@@ -108,7 +108,7 @@ function Profile() {
             )}
 
             {dataUser?.links && (
-              <p>
+              <p id={styles.link}>
                 <IoLinkSharp />
                 <a href={`https://${dataUser?.links}`} target="_blank">
                   {dataUser.links}
@@ -130,7 +130,7 @@ function Profile() {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
 

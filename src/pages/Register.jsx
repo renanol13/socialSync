@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import Form from "../components/form";
 import { useNavigate } from "react-router-dom";
-import MsgPopUp from "../components/msgPopUp";
 import { AuthContext } from "../context/AuthContext";
+
 
 function Register() {
   const { setStorageData } = useContext(AuthContext);
@@ -14,6 +14,8 @@ function Register() {
     return msg;
   };
   return <Form funcSubmit={submitRegister} />;
+  
+
 }
 
 export default Register;

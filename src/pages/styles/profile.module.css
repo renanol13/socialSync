@@ -1,6 +1,6 @@
 .boxProfile{
     color: white;
-    width: 100%;
+    height: 100vh;
     position: relative;
 }
 
@@ -47,8 +47,10 @@
     white-space: pre-line;
 }
 
-.moreInfo a{
+
+.moreInfo p a{
     text-decoration: none;
+    word-wrap: break-word;
     color: rgb(67, 67, 246);
 }
 
@@ -56,9 +58,6 @@
     margin-right: 4px;
 }
 
-/* .moreInfo #numberPosts{
-    font-size: .8em;
-} */
 
 .boxPosts{
     display: flex;

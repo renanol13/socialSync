@@ -81,8 +81,8 @@
 .boxUserComment{
     display: flex;
     justify-content: space-between;
-    gap: 200px;
     margin-top: 40px;
+    position: relative;
 }
 
 .boxUserComment p{

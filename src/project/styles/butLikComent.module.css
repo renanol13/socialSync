@@ -23,7 +23,7 @@
     color: red;
 }
 
-.boxControllers #comment, .boxControllers #like{
+.boxControllers #comment, .boxControllers .like{
     cursor: pointer;
 }
 

@@ -1,5 +1,6 @@
 import { MdDelete, MdModeEdit } from "react-icons/md";
 import { CiMenuKebab } from "react-icons/ci";
+import { SlOptions } from "react-icons/sl"
 
 import styles from "./styles/navFloat.module.css";
 import { useState } from "react";
@@ -28,7 +29,7 @@ function NavFloat({ data, handleFetch }) {
 
   return (
     <div className={styles.boxNavFloat}>
-      <CiMenuKebab
+      <SlOptions
         className={`${menu ? styles["stylesCustom"] : ""}`}
         onClick={(e) => handleNavFloat(e)}
       />

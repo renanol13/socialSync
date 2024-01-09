@@ -14,17 +14,18 @@ function Search() {
     let time;
     if (search.length != 0) {
       time = setTimeout(() => {
-        searchUsers();
-      }, 300);
+        searchUsers(search);
+      }, 100);
     }
     return () => clearTimeout(time);
   }, [search]);
+
 
   const searchUsers = () => {
     axiosFetch({
       method: "GET",
       url: `search/${search}`,
-    });
+    })
   };
 
   const handleChange = (e) => {

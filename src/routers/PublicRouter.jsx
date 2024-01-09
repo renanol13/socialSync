@@ -10,6 +10,7 @@ import Profile from "../pages/Profile";
 import Search from "../pages/Search";
 import Friends from "../pages/Friends";
 import PostPage from "../pages/PostPage";
+import FriendsPage from "../pages/FriendsPage";
 
 export default function PublicRouter() {
   return (
@@ -20,6 +21,7 @@ export default function PublicRouter() {
             <Route index element={<Conteiner> <Home /> </Conteiner>}/>
             <Route path="/profile/:name?" element={<Conteiner><Profile/></Conteiner>} />
             <Route path="/search" element={<Conteiner><Search/></Conteiner>} />
+            <Route path="/friendsPage/:name/:selectOption" element={<Conteiner><FriendsPage/></Conteiner>} />
             <Route path="/friends" element={<Conteiner><Friends/></Conteiner>} />
             <Route path="/postPage/:id" element={<Conteiner><PostPage/></Conteiner>} />
           </Route>

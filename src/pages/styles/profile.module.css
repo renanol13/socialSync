@@ -1,7 +1,6 @@
 .boxProfile{
     color: white;
     height: 100%;
-    padding-bottom: 60px;
     position: relative;
 }
 
@@ -27,6 +26,17 @@
     margin-bottom: 5px;
     font-weight: 500;
     color: var(--color4);
+}
+
+.infoUser #friends{
+    display: flex;
+    gap: 90px;
+    margin-top: 20px;
+}
+
+.infoUser #friends a{
+    text-decoration: none;
+    color: white;
 }
 
 .moreInfo{

@@ -9,14 +9,14 @@ import styles from "./styles/butLikComent.module.css";
 
 function ButLikComent({ setSendComment, data, setShowPageComments }) {
   const [isLike, setIsLike] = useState(false);
-  const [isFetching, setIsFetching] = useState(false);
+  const [Debounce, setDebounce] = useState(false);
   const { user } = useContext(AuthContext);
 
   const { instancePriv } = instanceApi();
 
   useEffect(() => {
     const checkLike = data.likes.some((elm) => elm.author == user.id);
-    checkLike ? setIsLike(true) : setIsLike(false);
+    if(checkLike) setIsLike(true)
   }, []);
 
   const handleComments = () => {
@@ -33,21 +33,21 @@ function ButLikComent({ setSendComment, data, setShowPageComments }) {
   };
 
   const fetchLike = async () => {
-    if (!isFetching) {
+    if (!Debounce) {
       try {
         //Impede que faça outra requisiçao antes concluir a atua
-        setIsFetching(true)
+        setDebounce(true)
         await instancePriv.post(`posts/like/${data._id}`);
 
         setIsLike(!isLike);
         
         setTimeout(() => {
-          setIsFetching(false);
+          setDebounce(false);
         }, 300);
 
       } catch (error) {
         console.log("Deu erro" + error);
-        setIsFetching(false)
+        setDebounce(false)
       }
     }
   };

@@ -13,7 +13,7 @@ function ButFollower({ userData }) {
   useEffect(() => {
     const checkFollow = userData.followers.find((elm) => elm.id == user.id);
     if (checkFollow) setIsFollowings(true);
-  }, []);
+  }, [userData]);
 
   const fetchFollow = async () => {
     if (!debounce) {
@@ -37,7 +37,7 @@ function ButFollower({ userData }) {
 
   return (
     <>
-      {user.id != userData._id && (
+      {user.id != userData?._id && (
         <Button
           text={isFollowings ? "Seguindo" : "Seguir"}
           handleClick={() => fetchFollow()}

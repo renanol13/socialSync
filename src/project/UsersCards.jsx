@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import ButFollower from "./butFollower";
 
 function UsersCards({ userData, showButFollowers=true }) {
-  console.log(userData);
 
   return (
     <>

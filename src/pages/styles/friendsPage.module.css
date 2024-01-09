@@ -1,0 +1,49 @@
+.boxFriendsPage{
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.boxFriendsPage nav{
+    width: 100%;
+}
+
+.boxFriendsPage ul{
+    width: 100%;
+    font-size: 1.3em;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.boxFriendsPage li{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: .5em;
+    font-weight: 600;
+}
+
+
+.boxFriendsPage .customStyle:after{
+    content: '';
+    margin-top: 3px;
+    display: block;
+    height: 4px;
+     width: 150%;
+    background-color: var(--color4);
+    border-radius: 50px;
+    animation: selectFollower .3s none ;
+}
+
+
+@keyframes selectFollower{
+    from{
+        width: 0%;
+    }
+    to{
+        width: 150%;
+    }
+}

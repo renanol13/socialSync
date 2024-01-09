@@ -32,6 +32,7 @@ export const AuthProvider = ({ children }) => {
         return { isLogged: true, msg: msg };
       }
     } catch (error) {
+      console.log('Deu erro no componente: AuthContext');
       return { isLogged: false, msg: error.response.data.msg };
     }
   };

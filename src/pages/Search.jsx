@@ -12,20 +12,19 @@ function Search() {
 
   useEffect(() => {
     let time;
-    if (search.length != 0) {
+    if (search.length !== 0) {
       time = setTimeout(() => {
-        searchUsers(search);
-      }, 100);
+        searchUsers();
+      }, 200);
     }
     return () => clearTimeout(time);
   }, [search]);
-
 
   const searchUsers = () => {
     axiosFetch({
       method: "GET",
       url: `search/${search}`,
-    })
+    });
   };
 
   const handleChange = (e) => {

@@ -25,7 +25,7 @@ function CommentsPage({
         setShowPageComments(false);
         handleFetch();
       } catch (error) {
-        console.log("Deu error" + error);
+        console.log("Deu erro no componente: CommentsPage" + error);
       }
     }
     setMsgComment("");

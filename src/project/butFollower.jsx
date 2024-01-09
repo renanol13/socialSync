@@ -29,7 +29,7 @@ function ButFollower({ userData }) {
           setDebounce(false);
         }, 300);
       } catch (error) {
-        console.log("Deu erro" + error);
+        console.log("Deu erro no component: ButFollower" + error);
         setDebounce(false);
       }
     }

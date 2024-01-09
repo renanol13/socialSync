@@ -32,7 +32,7 @@ function HomePage() {
         setMsgPost("");
         setFetchPost(!fetchPost);
       } catch (error) {
-        console.log('Deu erro'+ error);
+        console.log('Deu erro no componente: HomePage'+ error);
       }
     }
     setMsgPost("");

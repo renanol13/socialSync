@@ -48,7 +48,7 @@ function Profile() {
       const response = await instancePriv.get(`/${name || user.userName}`);
       setDataUser(response.data);
     } catch (error) {
-      console.log("Deu erro " + error);
+      console.log("Deu erro no componente: Profile" + error);
     }
   };
 

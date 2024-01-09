@@ -23,7 +23,7 @@ function NavFloat({ data, handleFetch }) {
       setMenu(false);
       handleFetch();
     } catch (error) {
-      console.log("Deu error" + error);
+      console.log("Deu erro no componente: navFloat" + error);
     }
   };
 

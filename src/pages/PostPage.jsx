@@ -31,7 +31,7 @@ function PostPage() {
       const response = await instancePriv.get(`/comments/${id}`);
       setDataComments(response.data);
     } catch (error) {
-      console.log("Deu erro " + error);
+      console.log("Deu erro no componente: PostPage " + error);
     }
   };
   
@@ -82,7 +82,6 @@ function PostPage() {
                 data={data[0]}
                 setSendComment={setSendComment}
                 setShowPageComments={setShowPageComments}
-                // handleButClose={handleButClose}
               />
             </div>
             {dataComments.length ? (

@@ -16,7 +16,7 @@ function ButLikComent({ setSendComment, data, setShowPageComments }) {
 
   useEffect(() => {
     const checkLike = data.likes.some((elm) => elm.author == user.id);
-    if(checkLike) setIsLike(true)
+    if (checkLike) setIsLike(true);
   }, []);
 
   const handleComments = () => {
@@ -36,31 +36,23 @@ function ButLikComent({ setSendComment, data, setShowPageComments }) {
     if (!Debounce) {
       try {
         //Impede que faça outra requisiçao antes concluir a atua
-        setDebounce(true)
+        setDebounce(true);
         await instancePriv.post(`posts/like/${data._id}`);
 
         setIsLike(!isLike);
-        
+
         setTimeout(() => {
           setDebounce(false);
         }, 300);
-
       } catch (error) {
         console.log("Deu erro" + error);
-        setDebounce(false)
+        setDebounce(false);
       }
     }
   };
 
-  const handleClickPage = (evt) => {
-    evt.stopPropagation();
-  };
-
   return (
-    <div
-      className={styles.boxControllers}
-      onClick={(evt) => handleClickPage(evt)}
-    >
+    <div className={styles.boxControllers}>
       <button
         id={styles.comment}
         onClick={(evt) => {

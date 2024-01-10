@@ -10,13 +10,7 @@ function NavFloat({ data, handleFetch }) {
   const [menu, setMenu] = useState(false);
   const { instancePriv } = instanceApi();
 
-  const handleNavFloat = (e) => {
-    e.stopPropagation();
-    setMenu(!menu);
-  };
-
   const fetchDelete = async (e) => {
-    e.stopPropagation();
     try {
       await instancePriv.delete(`/posts/${data._id}`);
       await instancePriv.delete(`/comments/${data._id}`);
@@ -31,7 +25,7 @@ function NavFloat({ data, handleFetch }) {
     <div className={styles.boxNavFloat}>
       <SlOptions
         className={`${menu ? styles["stylesCustom"] : ""}`}
-        onClick={(e) => handleNavFloat(e)}
+        onClick={(e) => setMenu(!menu)}
       />
       {menu && (
         <ul>
@@ -39,10 +33,10 @@ function NavFloat({ data, handleFetch }) {
             <MdDelete />
             Apagar
           </li>
-          <li>
+          {/* <li>
             <MdModeEdit />
             Editar
-          </li>
+          </li> */}
         </ul>
       )}
     </div>

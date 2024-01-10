@@ -39,3 +39,16 @@
     width: 20px;
     height: 20px;
 }
+
+@media (min-width: 600px){
+    .boxControllers .like:hover{
+        color: red;
+        opacity: 0.7;
+        transition: .3s;
+    }
+    .boxControllers #comment:hover{
+        color: rgb(68, 68, 237);
+        opacity: 0.7;
+        transition: .3s;
+    }
+}

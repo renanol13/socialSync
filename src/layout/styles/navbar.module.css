@@ -45,3 +45,10 @@
         bottom: initial;
     }
 }
+
+@media (min-width: 600px){
+    .boxNavBar svg:hover{
+        opacity: 0.5;
+        transition: .3s;
+    }
+}

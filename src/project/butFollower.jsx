@@ -20,7 +20,7 @@ function ButFollower({ userData }) {
       try {
         setDebounce(true);
         setIsFollowings(!isFollowings);
-        await instancePriv.post("/isfollow", {
+        await instancePriv.post("/follow", {
           userName: userData.userName,
           name: userData.name,
           id: userData._id,

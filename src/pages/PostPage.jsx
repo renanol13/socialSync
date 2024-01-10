@@ -45,7 +45,7 @@ function PostPage() {
   };
 
   return (
-    <>
+    <div className={styles.boxMain}>
       {showPageComments && (
         <CommentsPage
           setShowPageComments={setShowPageComments}
@@ -103,7 +103,7 @@ function PostPage() {
           </div>
         ))
       )}
-    </>
+    </div>
   );
 }
 

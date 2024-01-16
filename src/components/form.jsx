@@ -34,7 +34,7 @@ function Register({funcSubmit}) {
 
   return (
     <div className={styles.boxMainForm}>
-      <h1>Bem vindo ao SocialSync</h1>
+      <h1>Bem vindo ao Social-Sync</h1>
       <div className={styles.boxForm}>
         <h1>Cadastro</h1>
         <form onSubmit={handleSubmit}>

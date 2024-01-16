@@ -4,11 +4,13 @@
     justify-content: space-around;
     align-items: center;
     border-top: 1px solid var(--color3);
+    padding-block: .2em;
 }
 
 
 .boxControllers button{
-    padding: .5em 2em .1em 2em;
+    padding: .5em  2em;
+    height: 100%;
     font-weight: bold;
     background-color: transparent;
     border: none;
@@ -16,6 +18,8 @@
     display: flex;
     align-items: center;
     gap: 15px;
+    transition: .3s;
+    border-radius: 40px;
 }
 
 
@@ -42,13 +46,9 @@
 
 @media (min-width: 600px){
     .boxControllers .like:hover{
-        color: red;
-        opacity: 0.7;
-        transition: .3s;
+        opacity: .5;
     }
     .boxControllers #comment:hover{
-        color: rgb(68, 68, 237);
-        opacity: 0.7;
-        transition: .3s;
+        opacity: .5;
     }
 }

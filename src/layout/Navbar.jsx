@@ -11,6 +11,7 @@ function Navbar() {
 
   return (
     <nav className={styles.boxNavBar}>
+      <h1>Social-Sync</h1>
           <ul>
               <li><Link to='/'><GoHome/></Link> </li>
               <li><Link to='/search'><IoSearchSharp/></Link></li>

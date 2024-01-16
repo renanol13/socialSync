@@ -10,6 +10,10 @@
     z-index: 9999;
 }
 
+.boxNavBar > h1{
+    display: none;
+}
+
 .boxNavBar ul{
     display: flex;
     justify-content: space-around;
@@ -26,7 +30,6 @@
 
 .boxNavBar ul li a{
     text-decoration: none;
-    color: black;
 }
 
 .boxNavBar  ul li:active{
@@ -37,12 +40,18 @@
     width: 30px;
     height: 30px;
     color: white;
+    border-radius: 10px;
 }
 
 
 @media (min-width:1000px){
     .boxNavBar{
         bottom: initial;
+    }
+    .boxNavBar > h1{
+        display: block;
+        font-size: 2em;
+        color: var(--color5);
     }
 }
 
@@ -51,4 +60,5 @@
         opacity: 0.5;
         transition: .3s;
     }
+
 }

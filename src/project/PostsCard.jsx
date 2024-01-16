@@ -33,11 +33,11 @@ function PostsCard({
           <Link to={`/postPage/${elm._id}`} className={styles.boxContent}>
             <p>{elm.content}</p>
           </Link>
-          <ButLikComent
-            data={elm}
-            setSendComment={setSendComment}
-            setShowPageComments={setShowPageComments}
-          />
+            <ButLikComent
+              data={elm}
+              setSendComment={setSendComment}
+              setShowPageComments={setShowPageComments}
+            />
         </div>
       ))}
     </>

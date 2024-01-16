@@ -12,7 +12,6 @@
   --color3: #2a454b;
   --color4: #686C71;
   --color5: goldenrod;
-  
 }
 
 body,html, #root{
@@ -24,3 +23,13 @@ body,html, #root{
 li{
   list-style: none;
 }
+
+body::-webkit-scrollbar {
+  width: 12px !important;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--color3) ;
+  border-radius: 6px;
+}
+

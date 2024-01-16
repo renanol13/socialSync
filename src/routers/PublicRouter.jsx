@@ -13,6 +13,8 @@ import PostPage from "../pages/PostPage";
 import FriendsPage from "../pages/FriendsPage";
 
 export default function PublicRouter() {
+
+
   return (
     <BrowserRouter>
       <Navbar />

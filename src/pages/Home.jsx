@@ -1,10 +1,8 @@
 import { useLocation } from "react-router-dom";
 import MsgPopUp from "../components/msgPopUp";
 import { useEffect, useState } from "react";
-import TextArea from "../components/textArea";
 
 import styles from "./styles/home.module.css";
-import PostsCard from "../project/PostsCard";
 import HomePage from "../project/homePage";
 
 function Home() {

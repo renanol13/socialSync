@@ -4,7 +4,8 @@ import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 
 const AuthRouter = () => {
-  const {token} = useContext(AuthContext)
+  const { token } = useContext(AuthContext);
+
   return token ? <Outlet /> : <Signin />;
 };
 

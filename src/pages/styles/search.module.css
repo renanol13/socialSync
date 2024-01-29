@@ -9,5 +9,9 @@
 .boxSearch #search{
     display: flex;
     justify-content: center;
-    width: 85%;
+    width: 90%;
+}
+
+.boxSearch #search input{
+    height: 45px;
 }

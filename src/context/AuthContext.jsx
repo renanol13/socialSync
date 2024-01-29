@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { createContext } from "react";
 import InstancePublic from "../api/instancePublic";
-import { useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext();
 

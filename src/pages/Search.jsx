@@ -10,6 +10,7 @@ function Search() {
   const [search, setSearch] = useState("");
   const { loading, data, error, axiosFetch } = UseFetch();
 
+
   useEffect(() => {
     let time;
     if (search.length !== 0) {
@@ -36,7 +37,7 @@ function Search() {
     <div className={styles.boxSearch}>
       <div id={styles.search}>
         <Input
-          type="text"
+          type="search"
           name=""
           placeholder="Pesquisar por nome de usuário..."
           value={search}

@@ -2,35 +2,35 @@ import styles from "./styles/form.module.css";
 import Input from "./Input";
 import Button from "./button";
 import { useState } from "react";
-import { VerifyForm } from "./verifyForm";
+import { VerifyForm } from "../services/verifyForm";
 
-function Register({funcSubmit}) {
+function Register({ funcSubmit }) {
   const [data, setData] = useState({});
   const [message, setMessage] = useState();
 
   const handleChange = (e) => {
-    setMessage('')
+    setMessage("");
     setData({ ...data, [e.target.name]: e.target.value });
   };
-  
+
   const checkForm = async () => {
-    const { boolerForm, msgForm } = VerifyForm(data)
+    const { boolerForm, msgForm } = VerifyForm(data);
     if (boolerForm) {
       const response = await funcSubmit(data);
-      setMessage(response)
+      setMessage(response);
     } else {
-      setMessage(msgForm)
+      setMessage(msgForm);
     }
-  }
-    
+  };
+
   const handleSubmit = (e) => {
-    e.preventDefault()
-    if (data.name, data.email, data.password, data.passwordConfirm) {
+    e.preventDefault();
+    if ((data.name, data.email, data.password, data.passwordConfirm)) {
       checkForm();
-      return
+      return;
     }
-    setMessage('Prencha os campos')
-  }
+    setMessage("Prencha os campos");
+  };
 
   return (
     <div className={styles.boxMainForm}>
@@ -38,19 +38,19 @@ function Register({funcSubmit}) {
       <div className={styles.boxForm}>
         <h1>Cadastro</h1>
         <form onSubmit={handleSubmit}>
-        <Input
+          <Input
             type="text"
             name="userName"
             text="Nome de usuário"
-            stylesCheck= {!!message}
+            stylesCheck={!!message}
             value={data.userName ? data.userName : ""}
             handleChange={handleChange}
           />
-        <Input
+          <Input
             type="text"
             name="name"
             text="Nome"
-            stylesCheck= {!!message}
+            stylesCheck={!!message}
             value={data.name ? data.name : ""}
             handleChange={handleChange}
           />
@@ -58,7 +58,7 @@ function Register({funcSubmit}) {
             type="text"
             name="email"
             text="Email"
-            stylesCheck= {!!message}
+            stylesCheck={!!message}
             value={data.email ? data.email : ""}
             handleChange={handleChange}
           />
@@ -66,19 +66,19 @@ function Register({funcSubmit}) {
             type="text"
             name="password"
             text="Senha"
-            stylesCheck= {!!message}
+            stylesCheck={!!message}
             value={data.password ? data.password : ""}
             handleChange={handleChange}
           />
           <Input
             type="text"
             name="passwordConfirm"
-            stylesCheck= {!!message}
+            stylesCheck={!!message}
             text="Digite novamente sua senha"
             value={data.passwordConfirm ? data.passwordConfirm : ""}
             handleChange={handleChange}
           />
-          <p>{message ? message : ''}</p>
+          <p>{message ? message : ""}</p>
           <Button text="Cadastrar" />
         </form>
       </div>

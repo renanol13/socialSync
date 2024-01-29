@@ -1,7 +1,7 @@
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import styles from "./styles/postPage.module.css";
 import UseFetch from "../hook/useFetch";
-import { useEffect, useState } from "react";
+import { useEffect, useState} from "react";
 import instanceApi from "../api/instancePrivate";
 import { RxAvatar } from "react-icons/rx";
 import formatTime from "../services/formatTime";

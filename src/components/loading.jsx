@@ -1,4 +1,4 @@
-import Svg from '../img/svgLoading.svg'
+import Svg from '../img/loadingg.svg'
 
 import styles from './styles/svgLoading.module.css'
 

@@ -4,8 +4,7 @@ import { useContext, useState } from "react";
 import Button from "../components/button";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
-import { VerifyForm } from "../components/verifyForm";
-import MsgPopUp from "../components/msgPopUp";
+import { VerifyForm } from "../services/verifyForm";
 
 function Signin() {
   const [data, setData] = useState({});
@@ -15,14 +14,14 @@ function Signin() {
 
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
-    setMessage('')
+    setMessage("");
   };
 
   const checkForm = async () => {
     const { boolerForm, msgForm } = VerifyForm(data);
     if (boolerForm) {
-      const { isLogged, msg } = await setStorageData(data,"login/");
-      if (isLogged) navigate('/', {state:{msg: msg}})
+      const { isLogged, msg } = await setStorageData(data, "login/");
+      if (isLogged) navigate("/", { state: { msg: msg } });
       setMessage(msg);
     } else {
       setMessage(msgForm);
@@ -31,11 +30,11 @@ function Signin() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (data.email, data.password) {
+    if ((data.email, data.password)) {
       checkForm();
-      return
+      return;
     }
-    setMessage('Prencha os campos')
+    setMessage("Prencha os campos");
   };
 
   return (
@@ -48,7 +47,7 @@ function Signin() {
             type="text"
             name="email"
             text="Email"
-            stylesCheck= {!!message}
+            stylesCheck={!!message}
             value={data.email ? data.email : ""}
             handleChange={handleChange}
           />
@@ -56,11 +55,11 @@ function Signin() {
             type="password"
             name="password"
             text="Senha"
-            stylesCheck= {!!message}
+            stylesCheck={!!message}
             value={data.password ? data.password : ""}
             handleChange={handleChange}
           />
-          <p>{message ? message : ''}</p>
+          <p>{message ? message : ""}</p>
           <Button text="Entrar" />
         </form>
         <div className={styles.link}>

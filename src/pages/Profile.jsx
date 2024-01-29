@@ -52,6 +52,7 @@ function Profile() {
     }
   };
 
+
   useEffect(() => {
     getUser();
     getPosts();

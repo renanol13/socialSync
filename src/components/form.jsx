@@ -1,7 +1,7 @@
 import styles from "./styles/form.module.css";
 import Input from "./Input";
 import Button from "./button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { VerifyForm } from "../services/verifyForm";
 
 function Register({ funcSubmit }) {
@@ -32,11 +32,12 @@ function Register({ funcSubmit }) {
     setMessage("Prencha os campos");
   };
 
+
   return (
     <div className={styles.boxMainForm}>
       <h1>Bem vindo ao Social-Sync</h1>
+
       <div className={styles.boxForm}>
-        <h1>Cadastro</h1>
         <form onSubmit={handleSubmit}>
           <Input
             type="text"

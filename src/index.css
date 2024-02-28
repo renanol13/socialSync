@@ -24,6 +24,10 @@ li{
   list-style: none;
 }
 
+a{
+  text-decoration: none;
+}
+
 body::-webkit-scrollbar {
   width: 12px !important;
 }

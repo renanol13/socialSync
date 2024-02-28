@@ -7,6 +7,7 @@ import styles from "./styles/comments.module.css";
 import TextArea from "../components/textArea";
 import { useState } from "react";
 import instanceApi from "../api/instancePrivate";
+import SocketNotifications from "../config_Socket.io/socketNotifications";
 
 function CommentsPage({
   dataComment,
@@ -15,11 +16,13 @@ function CommentsPage({
 }) {
   const [msgComment, setMsgComment] = useState("");
   const { instancePriv } = instanceApi();
+  const { commentSocket } = SocketNotifications();
 
   const sendComments = async () => {
     if (msgComment) {
       try {
-        await instancePriv.post(`/comments/${dataComment[0].id}`, {
+        commentSocket(dataComment[0]);
+        await instancePriv.post(`/comments/${dataComment[0]._id}`, {
           content: msgComment,
         });
         setShowPageComments(false);
@@ -34,7 +37,7 @@ function CommentsPage({
   return (
     <div className={styles.boxBackground}>
       {dataComment.map((elm) => (
-        <div key={elm.id} className={styles.boxCommentsPage}>
+        <div key={elm._id} className={styles.boxCommentsPage}>
           <div id={styles.linkUser}>
             <div id={styles.boxInfoUser}>
               <RxAvatar />

@@ -24,7 +24,7 @@ function ButLikComent({ setSendComment, data, setShowPageComments }) {
     setShowPageComments(true);
     setSendComment([
       {
-        id: data._id,
+        _id: data._id,
         author: data.author,
         nameAuthor: data.nameAuthor,
         userNameAuthor: data.userNameAuthor,

@@ -19,17 +19,27 @@
     justify-content: space-around;
     width: 100%;
     max-width: 800px;
+    height: 100%;
 }
 
 .boxNavBar ul li{
     border-radius: 50%;
+    text-decoration: none;
     padding: .3em;
+}
 
+.boxNavBar ul li a{
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    transition: .3s;
+    padding: .5em;
+    
 }
 
 
-.boxNavBar ul li a{
-    text-decoration: none;
+.boxNavBar ul li span{
+    display: none;
 }
 
 
@@ -37,30 +47,68 @@
     width: 30px;
     height: 30px;
     color: var(--color4);
-    border-radius: 10px;
     box-sizing: content-box;
-    padding: .5em;
     transition: .3s;
 }
 
-.boxNavBar .activeNav svg{
+.boxNavBar .activeNav span, .boxNavBar .activeNav svg{
     color: white !important;
 }
 
+.boxNavBar li:nth-child(2){
+    position: relative;
+}
 
-@media (min-width:1000px){
+#activeNofication{
+    width: 12px;
+    height: 12px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    left: 34px;
+    top: 12px;
+}
+
+@media (min-width:700px){
     .boxNavBar{
         bottom: initial;
+        height: 100vh;
+        width: max-content;
+        padding: 0px 1em;
+        border-right: 2px solid var(--color2);
     }
     .boxNavBar > h1{
         display: block;
         font-size: 2em;
         color: var(--color5);
     }
-}
 
-@media (min-width: 600px){
-    .boxNavBar svg:hover{
-        background-color: var(--color1);
+    .boxNavBar ul{
+        flex-direction: column;
+        height: 100%;
+        width: initial;
+        max-width: initial;
+    }
+
+    .boxNavBar a:hover{
+        background-color: var(--color2);
+    }
+
+    .boxNavBar a:active{
+        transform: scale(.9);
     }
 }
+
+@media (min-width:1000px){
+    .boxNavBar ul li span{
+        display: block;
+        color: var(--color4);
+        font-weight: 600;
+        font-size: 1.3em;
+        transition: .3s;
+        text-indent: 5px;
+    }
+
+}
+
+

@@ -9,10 +9,10 @@ const getSocketConfig = (user) => ({
   },
 });
 
-
-
 export const SocketProvider = ({ children, user }) => {
   const [socket, setSocket] = useState(null);
+  const [notificationsData, setNotificationsData] = useState([]);
+  const [isNotification, setIsNotification] = useState(false);
 
   useEffect(() => {
     const newSocket = io("http://localhost:3001/", getSocketConfig(user));
@@ -30,15 +30,26 @@ export const SocketProvider = ({ children, user }) => {
 
   useEffect(() => {
     if (socket === null) return;
-    socket.on("notificationLike", (sender) => {
-      console.log(sender);
+
+    socket.on("notifications", (sender) => {
+      setNotificationsData((prev) => [...prev, sender]);
+      setIsNotification(true);
     });
 
-    return () => socket.off("notificationLike");
+    return () => socket.off("notification");
   }, [socket]);
 
+
   return (
-    <SocketContext.Provider value={{ socket }}>
+    <SocketContext.Provider
+      value={{
+        socket,
+        notificationsData,
+        setNotificationsData,
+        isNotification,
+        setIsNotification,
+      }}
+    >
       {children}
     </SocketContext.Provider>
   );

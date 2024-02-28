@@ -1,0 +1,12 @@
+.boxNotifications{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.boxNotifications h1{
+    align-self: start;
+    color: white;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}

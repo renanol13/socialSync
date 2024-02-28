@@ -10,8 +10,8 @@ const SocketNotifications = () => {
   };
 
 
-  const commentSocket = () => {
-    socket.emit("commented");
+  const commentSocket = (dataPubli) => {
+    socket.emit("commented", dataPubli);
   };
 
   const followed = (idFollowing) => {

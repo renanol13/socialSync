@@ -4,6 +4,7 @@
     padding: 0px .3em;
     margin: 0 auto;
     padding-bottom: 60px;
+    background-color: red;
 }
 
 @media (min-width:1000px){

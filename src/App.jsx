@@ -1,11 +1,16 @@
 import PublicRouter from "./routers/PublicRouter";
-import { AuthProvider } from "./context/AuthContext";
+import { SocketProvider } from "./context/SocketContext";
+import { AuthContext } from "./context/AuthContext";
+import { useContext } from "react";
 
 function App() {
+
+  const { user } = useContext(AuthContext)
+  
   return (
-    <AuthProvider>
+      <SocketProvider user={user}>
         <PublicRouter />
-    </AuthProvider>
+      </SocketProvider>
   );
 }
 

@@ -2,11 +2,13 @@ import { useContext, useEffect, useState } from "react";
 import Button from "../components/button";
 import { AuthContext } from "../context/AuthContext";
 import instanceApi from "../api/instancePrivate";
+import SocketNotifications from "../config_Socket.io/socketNotifications";
 
 function ButFollower({ userData }) {
   const { user } = useContext(AuthContext);
   const [isFollowings, setIsFollowings] = useState(false);
   const [debounce, setDebounce] = useState(false);
+  const {followed} = SocketNotifications()
 
   const { instancePriv } = instanceApi();
 
@@ -18,6 +20,8 @@ function ButFollower({ userData }) {
   const fetchFollow = async () => {
     if (!debounce) {
       try {
+        followed(userData._id)
+        
         setDebounce(true);
         setIsFollowings(!isFollowings);
         await instancePriv.post("/follow", {

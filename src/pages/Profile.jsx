@@ -23,7 +23,7 @@ import styles from "./styles/profile.module.css";
 
 function Profile() {
   const { name } = useParams();
-
+  
   const { user } = useContext(AuthContext);
 
   const [dataUser, setDataUser] = useState(null);
@@ -48,7 +48,7 @@ function Profile() {
       const response = await instancePriv.get(`/${name || user.userName}`);
       setDataUser(response.data);
     } catch (error) {
-      console.log("Deu erro no componente: Profile" + error);
+      console.log("Deu erro no componente: Profile. " + error);
     }
   };
 

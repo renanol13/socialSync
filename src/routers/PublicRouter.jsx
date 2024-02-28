@@ -14,7 +14,7 @@ import FriendsPage from "../pages/FriendsPage";
 
 export default function PublicRouter() {
 
-
+  const date = new Date()
   return (
     <BrowserRouter>
       <Navbar />

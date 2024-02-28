@@ -6,13 +6,14 @@ import instanceApi from "../api/instancePrivate";
 import { AuthContext } from "../context/AuthContext";
 
 import styles from "./styles/butLikComent.module.css";
+import SocketNotifications from "../config_Socket.io/socketNotifications";
 
 function ButLikComent({ setSendComment, data, setShowPageComments }) {
   const [isLike, setIsLike] = useState(false);
   const [Debounce, setDebounce] = useState(false);
   const { user } = useContext(AuthContext);
-
   const { instancePriv } = instanceApi();
+ const {likeSocket} = SocketNotifications()
 
   useEffect(() => {
     const checkLike = data.likes.some((elm) => elm.author == user.id);
@@ -38,14 +39,14 @@ function ButLikComent({ setSendComment, data, setShowPageComments }) {
         //Impede que faça outra requisiçao antes concluir a atua
         setDebounce(true);
         await instancePriv.post(`posts/like/${data._id}`);
-
+        likeSocket(data)
         setIsLike(!isLike);
 
         setTimeout(() => {
           setDebounce(false);
-        }, 300);
+        }, 100);
       } catch (error) {
-        console.log("Deu erro" + error);
+        console.log("Deu erro" + error)
         setDebounce(false);
       }
     }

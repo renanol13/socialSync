@@ -5,9 +5,10 @@ import { RxAvatar } from "react-icons/rx";
 import { IoClose } from "react-icons/io5";
 import styles from "./styles/comments.module.css";
 import TextArea from "../components/textArea";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import instanceApi from "../api/instancePrivate";
 import SocketNotifications from "../config_Socket.io/socketNotifications";
+import { AuthContext } from "../context/AuthContext";
 
 function CommentsPage({
   dataComment,
@@ -17,11 +18,12 @@ function CommentsPage({
   const [msgComment, setMsgComment] = useState("");
   const { instancePriv } = instanceApi();
   const { commentSocket } = SocketNotifications();
+  const { user} = useContext(AuthContext)
 
   const sendComments = async () => {
     if (msgComment) {
       try {
-        commentSocket(dataComment[0]);
+        commentSocket(user,dataComment[0]);
         await instancePriv.post(`/comments/${dataComment[0]._id}`, {
           content: msgComment,
         });

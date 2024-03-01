@@ -39,7 +39,7 @@ function ButLikComent({ setSendComment, data, setShowPageComments }) {
         //Impede que faça outra requisiçao antes concluir a atua
         setDebounce(true);
         await instancePriv.post(`posts/like/${data._id}`);
-        likeSocket(data)
+        likeSocket(user, data)
         setIsLike(!isLike);
 
         setTimeout(() => {

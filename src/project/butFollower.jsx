@@ -20,7 +20,7 @@ function ButFollower({ userData }) {
   const fetchFollow = async () => {
     if (!debounce) {
       try {
-        followed(userData._id)
+        followed(user, userData._id)
         
         setDebounce(true);
         setIsFollowings(!isFollowings);

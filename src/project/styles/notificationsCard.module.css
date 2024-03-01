@@ -23,9 +23,12 @@
 
 }
 
+#info > a{
+    font-size: 1.1em;
+}
+
 #info span a{
     color: var(--color4);
-
 }
 
 

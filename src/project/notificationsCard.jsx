@@ -29,10 +29,12 @@ function NotificationsCard({ notificationsData }) {
                   {elm.type === "liked" ? " Curtiu " : " Comentou "} na sua
                   postagem:
                   <Link to={`/postPage/${elm.idPubli}`}>
-                    "{limitingLength(elm.content)}"
+                    "{limitingLength(elm.content)}".
                   </Link>
                 </span>
               )}
+              
+              { elm.type === "followed" && <span> Começou a seguir você. </span>}
             </p>
             <p id={styles.date}>{formatTime(elm.createdAt)}</p>
           </div>

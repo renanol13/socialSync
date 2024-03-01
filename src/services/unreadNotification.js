@@ -1,8 +1,5 @@
-const unreadNotification = (notifications) => {
-  let notificationRead;
-    notificationRead = notifications.map((elm) => (elm.isRead = true));
-    
-  return notificationRead;
+const unreadNotification = (data) => {
+    return  data.some((elm) => elm.isRead === false);
 };
 
 export default unreadNotification;

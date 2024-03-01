@@ -28,7 +28,7 @@ function Navbar() {
             to="/notification"
             className={pathname === "/notification" ? styles["activeNav"] : ""}
           >
-            {(isNotification && pathname !== '/notification') && <div id={styles.activeNofication}></div>}
+            {isNotification && <div id={styles.activeNofication}></div>}
             <IoNotificationsSharp />
             <span>Notificações</span>
           </Link>

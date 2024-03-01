@@ -1,23 +1,20 @@
 import { useContext } from "react";
 import { SocketContext } from "../context/SocketContext";
 
-
 const SocketNotifications = () => {
   const { socket } = useContext(SocketContext);
 
-  const likeSocket = (dataPubli) => {
-    socket.emit("liked", dataPubli)
+  const likeSocket = (user, dataPubli) => {
+    socket.emit("liked", user, dataPubli);
   };
 
-
-  const commentSocket = (dataPubli) => {
-    socket.emit("commented", dataPubli);
+  const commentSocket = (user, dataPubli) => {
+    socket.emit("commented", user, dataPubli);
   };
 
-  const followed = (idFollowing) => {
-    socket.emit("followed", idFollowing);
-    console.log(idFollowing);
-  }
+  const followed = (user, idFollowing) => {
+    socket.emit("followed", user, idFollowing);
+  };
 
   return { likeSocket, commentSocket, followed };
 };
